@@ -315,6 +315,59 @@
     .container { padding: 0.75rem; }
     body { overflow-wrap: break-word; word-break: break-word; }
     .section-tracker { display: none; }
+
+    /* Tablas como cards en mobile */
+    .summary-table thead { display: none; }
+    .summary-table tbody, .summary-table tr { display: block; }
+    .summary-table tr {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+    }
+    .summary-table td {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      border-bottom: 1px solid #f0f0f0;
+      padding: 8px 12px;
+    }
+    .summary-table td:last-child { border-bottom: none; }
+    .summary-table td::before {
+      content: attr(data-label);
+      font-weight: 700;
+      color: var(--green-dark);
+      font-size: 0.75rem;
+      min-width: 60px;
+      flex-shrink: 0;
+    }
+    .summary-table tr:nth-child(even) td { background: var(--green-bg); }
+
+    .roadmap-table thead { display: none; }
+    .roadmap-table tbody, .roadmap-table tr { display: block; }
+    .roadmap-table tr {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+    }
+    .roadmap-table td {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      border-bottom: 1px solid #f0f0f0;
+      padding: 8px 12px;
+    }
+    .roadmap-table td:last-child { border-bottom: none; }
+    .roadmap-table td::before {
+      content: attr(data-label);
+      font-weight: 700;
+      color: var(--green-dark);
+      font-size: 0.75rem;
+      min-width: 60px;
+      flex-shrink: 0;
+    }
+    .roadmap-table tr:nth-child(even) td { background: var(--green-bg); }
   }
   @media (max-width: 320px) {
     .cover h1 { font-size: 1.3rem; }
@@ -350,12 +403,12 @@
       <tr><th>Area Tecnica</th><th>Nivel</th><th>Observacion Clave</th></tr>
     </thead>
     <tbody>
-      <tr><td>Saque</td><td class="level level-improve">A mejorar</td><td>Lanzamiento inconsistente y poca participacion de piernas en el impulso. El movimiento es principalmente de brazo.</td></tr>
-      <tr><td>Derecha (Forehand)</td><td class="level level-inter">Intermedio</td><td>Buen timing de contacto, pero falta preparacion anticipada (unit turn) y terminacion completa del swing.</td></tr>
-      <tr><td>Reves (Backhand)</td><td class="level level-inter">Intermedio</td><td>Se observa uso a dos manos con base solida. Oportunidad de mejorar la rotacion de hombros.</td></tr>
-      <tr><td>Juego de pies</td><td class="level level-improve">A mejorar</td><td>Tendencia a quedarse estatico entre golpes. Falta split step consistente y recuperacion al centro.</td></tr>
-      <tr><td>Posicionamiento</td><td class="level level-inter">Intermedio</td><td>Juega mayormente desde atras de la linea de base. Podria ser mas agresivo tomando la pelota mas adelante.</td></tr>
-      <tr><td>Postura general</td><td class="level level-good">Bueno</td><td>Buena base atletica. Centro de gravedad razonable. Se nota soltura en la cancha.</td></tr>
+      <tr><td data-label="Area:">Saque</td><td data-label="Nivel:" class="level level-improve">A mejorar</td><td data-label="Obs:">Lanzamiento inconsistente y poca participacion de piernas en el impulso. El movimiento es principalmente de brazo.</td></tr>
+      <tr><td data-label="Area:">Derecha (Forehand)</td><td data-label="Nivel:" class="level level-inter">Intermedio</td><td data-label="Obs:">Buen timing de contacto, pero falta preparacion anticipada (unit turn) y terminacion completa del swing.</td></tr>
+      <tr><td data-label="Area:">Reves (Backhand)</td><td data-label="Nivel:" class="level level-inter">Intermedio</td><td data-label="Obs:">Se observa uso a dos manos con base solida. Oportunidad de mejorar la rotacion de hombros.</td></tr>
+      <tr><td data-label="Area:">Juego de pies</td><td data-label="Nivel:" class="level level-improve">A mejorar</td><td data-label="Obs:">Tendencia a quedarse estatico entre golpes. Falta split step consistente y recuperacion al centro.</td></tr>
+      <tr><td data-label="Area:">Posicionamiento</td><td data-label="Nivel:" class="level level-inter">Intermedio</td><td data-label="Obs:">Juega mayormente desde atras de la linea de base. Podria ser mas agresivo tomando la pelota mas adelante.</td></tr>
+      <tr><td data-label="Area:">Postura general</td><td data-label="Nivel:" class="level level-good">Bueno</td><td data-label="Obs:">Buena base atletica. Centro de gravedad razonable. Se nota soltura en la cancha.</td></tr>
     </tbody>
   </table>
 
@@ -496,10 +549,10 @@
       <tr><th>Semanas</th><th>Foco Principal</th><th>Foco Secundario</th></tr>
     </thead>
     <tbody>
-      <tr><td><strong>1&ndash;2</strong></td><td>Lanzamiento del saque (drill del toss, 100 lanzamientos por sesion)</td><td>Split step (drill con companero)</td></tr>
-      <tr><td><strong>3&ndash;4</strong></td><td>Mecanica del saque completa (dos tiempos + piernas)</td><td>Recuperacion al centro (drill del cono)</td></tr>
-      <tr><td><strong>5&ndash;6</strong></td><td>Preparacion anticipada en derecha y reves (unit turn)</td><td>Pasos de ajuste fino</td></tr>
-      <tr><td><strong>7&ndash;8</strong></td><td>Integracion: puntos de practica aplicando todo</td><td>Posicionamiento agresivo (tomar pelotas cortas)</td></tr>
+      <tr><td data-label="Sem:"><strong>1&ndash;2</strong></td><td data-label="Principal:">Lanzamiento del saque (drill del toss, 100 lanzamientos por sesion)</td><td data-label="Secundario:">Split step (drill con companero)</td></tr>
+      <tr><td data-label="Sem:"><strong>3&ndash;4</strong></td><td data-label="Principal:">Mecanica del saque completa (dos tiempos + piernas)</td><td data-label="Secundario:">Recuperacion al centro (drill del cono)</td></tr>
+      <tr><td data-label="Sem:"><strong>5&ndash;6</strong></td><td data-label="Principal:">Preparacion anticipada en derecha y reves (unit turn)</td><td data-label="Secundario:">Pasos de ajuste fino</td></tr>
+      <tr><td data-label="Sem:"><strong>7&ndash;8</strong></td><td data-label="Principal:">Integracion: puntos de practica aplicando todo</td><td data-label="Secundario:">Posicionamiento agresivo (tomar pelotas cortas)</td></tr>
     </tbody>
   </table>
 
