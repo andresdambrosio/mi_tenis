@@ -114,7 +114,7 @@
   }
   .summary-table .level {
     font-weight: 700;
-    white-space: nowrap;
+    white-space: normal;
   }
   .level-improve { color: #E65100; }
   .level-inter { color: #1565C0; }
@@ -244,6 +244,19 @@
     .cover h1 { font-size: 2rem; }
     .serve-grid { grid-template-columns: 1fr; }
     .container { padding: 1rem; }
+  }
+  @media (max-width: 480px) {
+    .cover h1 { font-size: 1.5rem; }
+    .cover .subtitle { font-size: 1.1rem; }
+    h2 { font-size: 1.4rem; }
+    h3 { font-size: 1.1rem; }
+    .serve-grid { grid-template-columns: 1fr; }
+    .container { padding: 0.75rem; }
+    body { overflow-wrap: break-word; word-break: break-word; }
+  }
+  @media (max-width: 320px) {
+    .cover h1 { font-size: 1.3rem; }
+    .container { padding: 0.5rem; }
   }
 </style>
 </head>
